@@ -1,0 +1,34 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.10.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'lunf.queen'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.hsqldb:hsqldb:2.4.0')
+	compile('io.projectreactor:reactor-bus')
+    compileOnly('org.projectlombok:lombok')
+	compile 'com.github.messenger4j:messenger4j:1.0.0-M3'
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
