@@ -3,10 +3,12 @@ package lunf.queen.margherita.entity;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 @Data
 public class JmMessage {
+    @Id
     private long id;
     private String senderId;
     private String recipientId;
